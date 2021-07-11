@@ -12,56 +12,76 @@ public class TestaTudo{
 		Logar log = new Logar ();
 		Doador Doa1 = new Doador();
 		Beneficiario Recebe1 = new Beneficiario();
-		int res = 0;
+		int ApoioOuBenef = 0;
+		
+		
 		//TeleInicial
 		System.out.println("BEM VINDES!!!");
 		System.out.println("NOME PROJETO");
 		System.out.println("================");
+		
+		
 		//Cadastro ou Login
 		System.out.println("Você já tem cadastro?");
 		System.out.println("1 - SIM | 2 - NÃO");
 		int cadastroLogin = read.nextInt();
+		read.nextLine();
 		//Simulamos um login aqui
 		//login : adm
 		//senha: 123
 		//será um doador
+		
 		if (cadastroLogin  ==1 ) {
-			log.login();
+			log.login(read);
 			Doa1.setNome("Felipe");
-			res =1;
+			ApoioOuBenef =1;
 		}
 		else {
 			//triagem
 			System.out.println("Escolha seu perfil");
 			System.out.println("1 - Apoiador | 2 - Amparado ou Beneficiário"); 
-			res =read.nextInt();
-			if ( res == 1 ) {
-				Doa1.Cadastramento();
-				Doa1.Doacao();
+			ApoioOuBenef =read.nextInt();
+			read.nextLine();
+			if (ApoioOuBenef == 1 ) {
+				Doa1.Cadastramento(read);
+				Doa1.Doacao(read);
 			}
+			
 			else {
-				Recebe1.Cadastramento();
-				Recebe1.Demanda();
+				Recebe1.Cadastramento(read);
+				Recebe1.Demanda(read);
 			}
 		}
+		
+		
 		//laço de repetição caso o usario deseje fazer mais alguma doação ou pedido
 		do {	
-			System.out.println("Deseja Fazer mais uma Doação/Receber?\n 1- SIM | 2- NAO");
 			int Continuar = 0;
-			Continuar = read.nextInt();
-			if (Continuar == 2 ){
-				break;
-			}
+	
+
 			//usando o res la de cima para diferencia um doador, de um beneficiario;
-			if (res == 1) {
-				Doa1.Doacao();
+			if (ApoioOuBenef == 1) {
+				System.out.println("Deseja Fazer mais uma doação?\n 1- SIM | 2- NAO");
+				Continuar = read.nextInt();
+				if (Continuar == 2 ){
+					break;
+				}
+				Doa1.Doacao(read);
 			}
 			else {
-				Recebe1.Demanda();
+				System.out.println("Deseja Fazer mais um pedido?\n 1- SIM | 2- NAO");
+				Continuar = read.nextInt();
+				if (Continuar == 2 ){
+					break;
+				}
+				Recebe1.Demanda(read);
 			}
 		}while(Continuar != 2);
-			
-			if (res ==1) {	
+		
+		
+		
+			//Mensagem de agradecimento
+			if (ApoioOuBenef ==1) {	
 			Doa1.MessagemDoador();
 		}
 			else {

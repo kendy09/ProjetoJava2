@@ -3,7 +3,6 @@ package br.com.generation.ProjetoJava;
 import java.util.Scanner;
 
 public class Beneficiario extends Usuario{
-	Scanner read = new Scanner (System.in);
 	private int RecebeAlimentos;
 	private int RecebeRoupas;
 	private int RecebeBrinquedo;
@@ -40,7 +39,7 @@ public class Beneficiario extends Usuario{
 	public void setRecebeOutros(int recebeOutros) {
 		RecebeOutros = recebeOutros;
 	}
-	public void Demanda() {			
+	public void Demanda(Scanner read) {			
 		System.out.println("==========Amparado ou Beneficiário==========");
 		System.out.println("\nO que voce deseja Receber: \n1-Alimentos não Perecíveis"
 				+ "\n2-Roupas \n3-Brinquedos \n4-Farmácia \n5-Outros");
@@ -50,32 +49,32 @@ public class Beneficiario extends Usuario{
 			case 1:
 				System.out.println("Alimentos");
 				System.out.println("Quantos Alimentos deseja Receber?");
-				setRecebeAlimentos(read.nextInt());
+				this.RecebeAlimentos +=read.nextInt();
 				break;
 			case 2:
 				System.out.println("Roupas");
 				System.out.println("Quantas Roupas deseja Receber?");
-				setRecebeRoupas(read.nextInt());
+				this.RecebeRoupas +=read.nextInt();
 				break;
 			case 3:
 				System.out.println("Brinquedos");
 				System.out.println("Quantos Brinquedos deseja Receber?");
-				setRecebeBrinquedo(read.nextInt());
+				this.RecebeBrinquedo +=read.nextInt();
 				break;
 			case 4:
 				System.out.println("Farmácia");
 				System.out.println("Quantos produtos deseja Receber?");
-				setRecebeFarmacia(read.nextInt());
+				this.RecebeFarmacia +=read.nextInt();;
 				break;
 			case 5:
 				System.out.println("Outros");
 				System.out.println("Quantos produtos deseja Receber?");
 				// Como fazer para ler int e char - Excluir Outros ???
-				setRecebeOutros(read.nextInt());
+				this.RecebeOutros +=read.nextInt()
 				break;
 			}
 		}
-		public void Cadastramento(){	
+		public void Cadastramento(Scanner read){	
 			
 			System.out.println("Faça seu cadastro! ");
 			System.out.println("Insira seu Nome: ");
