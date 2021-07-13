@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Doador extends Usuario {
 	
-	Scanner read = new Scanner (System.in);
+
 	private int DoaAlimentos;
 	private int DoaRoupas;
 	private int DoaBrinquedo;
@@ -51,8 +51,10 @@ public class Doador extends Usuario {
 	public void setDoaOutros(int doaOutros) {
 		DoaOutros = doaOutros;
 	}
+	
 
-	public void Doacao() {
+
+	public void Doacao(Scanner read) {
 		System.out.println("===========Doador===========\n");
 		System.out.println("O que voce deseja doar\n1-Alimentos não perecíveis"
 			+ "\n2-Roupas \n3-Brinquedos \n4-Farmacia \n5-Outros");
@@ -62,34 +64,37 @@ public class Doador extends Usuario {
 		case 1:
 			System.out.println("Alimentos não Perecíveis");
 			System.out.println("\nQuantos Alimentos deseja doar?");
-			setDoaAlimentos(read.nextInt());
+			this.DoaAlimentos +=read.nextInt();
 			break;
 		case 2:
 			System.out.println("Roupas");
 			System.out.println("Quantas Roupas deseja doar?");
-			setDoaRoupas(read.nextInt());
+			this.DoaRoupas +=read.nextInt();
 			break;
 		case 3:
 			System.out.println("Brinquedos");
 			System.out.println("Quantos Brinquedos deseja doar?");
-			setDoaBrinquedo(read.nextInt());
+			this.DoaBrinquedo +=read.nextInt();
 			break;
 		case 4:
 			System.out.println("Farmácia");
 			System.out.println("Quantos produtos você deseja doar?");
-			setDoaFarmacia(read.nextInt());
+			this.DoaFarmacia +=read.nextInt();
 			break;
 		case 5:
 			System.out.println("Outros");
-			System.out.println("Digite o que deseja doar: ");
 			System.out.println("Quantos produtos deseja doar?");
-			setDoaOutros(read.nextInt());
+			this.DoaOutros +=read.nextInt();
+			System.out.println("Liste os objetos que deseja doar: ");
+
 			break;
 		default:
 			System.out.println("Numero invalido");
 		}
 	}
-		public void Cadastramento(){	
+	
+	
+		public void Cadastramento(Scanner read){	
 			
 			System.out.println("Faça seu cadastro! ");
 			System.out.println("Insira seu Nome: ");
@@ -119,4 +124,5 @@ public class Doador extends Usuario {
 			}
 			System.out.println("Muito obrigade, "+getNome()+ " por sua doação.\nSua ajuda fará diferença em muitas vidas.");
 		}
+
 }

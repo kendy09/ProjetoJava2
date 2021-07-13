@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Logar {
 	Doador Doa1 = new Doador();
-	Scanner read = new Scanner(System.in);
 	private String admin  = "adm";
 	private String password = "123";
 	String email;
@@ -23,10 +22,10 @@ public class Logar {
 		this.password = password;
 	}
 
-	public void login() {
+	public void login(Scanner read) {
 		String email,senha;
 		boolean cadastro = true;
-		Scanner read = new Scanner (System.in);
+	
 		do {
 			System.out.println("Insira seu email: ");
 			email = read.nextLine();
@@ -41,6 +40,7 @@ public class Logar {
 				cadastro =false;
 			}
 		}while(cadastro == false);
+		
 	}
 }
 	
