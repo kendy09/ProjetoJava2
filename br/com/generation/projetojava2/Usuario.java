@@ -8,7 +8,7 @@ public class Usuario {
 	private int telefone;
 	private String email; // login
 	private String senha;
-
+	private String local;
 	
 	
 	public String getNome() {

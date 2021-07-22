@@ -165,6 +165,7 @@ public class Beneficiario extends Usuario {
 				setRecebeBrinquedo(0);
 				setRecebeRoupas(0);
 				setRecebeFarmacia(0);
+				Pedidos.clear();
 				Demanda(read);
 			}
 			// Cancela os pedidos
@@ -173,6 +174,7 @@ public class Beneficiario extends Usuario {
 				setRecebeBrinquedo(0);
 				setRecebeRoupas(0);
 				setRecebeFarmacia(0);
+				Pedidos.clear();
 				System.out.println(" SOLICITAÇÃO CANCELADA !!  ");
 				break;
 			}

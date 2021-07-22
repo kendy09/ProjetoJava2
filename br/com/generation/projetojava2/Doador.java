@@ -171,6 +171,7 @@ public class Doador extends Usuario {
 					setDoaBrinquedo(0);
 					setDoaRoupas(0);
 					setDoaFarmacia(0);
+					Doacoes.clear();
 					Doacao(read);
 			}
 				else {
@@ -178,6 +179,7 @@ public class Doador extends Usuario {
 					setDoaBrinquedo(0);
 					setDoaRoupas(0);
 					setDoaFarmacia(0);
+					Doacoes.clear();
 					System.out.println("===============================================");
 					System.out.println("             SOLICITAÇÃO CANCELADA ");
 					System.out.println("===============================================");
